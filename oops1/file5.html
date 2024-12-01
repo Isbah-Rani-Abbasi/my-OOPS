@@ -1,0 +1,87 @@
+<!-- 2: Create an HTML page that displays a simple table of services offered by a company.
+The table should include three columns: "Service," "Description," and "Price." Populate the table
+with the following data:
+1. Web Development: "Building responsive and functional websites." - $500
+2. Graphic Design: "Creating visually appealing graphics and logos." - $300
+3. SEO Services: "Optimizing websites for better search engine rankings." - $400 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body
+    {
+        background-color: paleturquoise;
+        font-family: sans-serif;
+    }
+    header
+    {
+        text-align: center;
+    }
+    th
+    {
+        padding: 15px;
+        background-color: aqua;
+    }
+    td
+    {
+        padding: 10px;
+    }
+    tr
+    {
+        margin: 2px;
+    }
+    table,td,th
+    {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    tr:nth-child(even)
+    {
+        background-color: aqua;
+    }
+    tr:nth-child(odd)
+    {
+        background-color: aquamarine;
+    }
+    table
+    {
+      margin: 0auto;
+    }
+</style>
+<body>
+  
+    <header>
+        <h1>SERVICES OFFERED BY COMPANY!</h1>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>SERIVCES</th>
+                <th>DESCRIPTION</th>
+                <th>PRICE</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Web Development</td>
+                <td>Building responsive and functional websites</td>
+                <td>$500</td>
+            </tr>
+            <tr>
+                <td>Graphic Design</td>
+                <td>Creating visually appealing graphics and logos</td>
+                <td> $300</td>
+            </tr>
+            <tr>
+                <td>SEO Services</td>
+                <td>Optimizing websites for better search engine rankings.</td>
+                <td>$400</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
