@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalase Experiment - Apparatus Layout</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #0f172a;
+        color: #cbd5e1;
+        margin: 0;
+      }
+      .simulation {
+        
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+     
+      
+      .lab-area {
+        position: relative;
+        width: 1100px;
+        height: 900px;
+        background-color: #1e293b;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+
+      .table-surface {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        background-color: #334155;
+        border-top: 4px solid #64748b;
+      }
+
+      .apparatus {
+        position: absolute;
+        width: 80px;
+        cursor: pointer;
+      }
+
+      .beaker {
+        width: 300px;
+        height: 400px;
+        bottom: 0;
+        left: 30%;
+         
+      
+      }
+      #milk {
+        top: -183px;
+        height: 180px;
+        width: 180px;
+        left: 10%;
+        transform-origin: top left;
+        cursor: pointer;
+        
+      }
+
+      .water {
+        width: 250px;
+        height: 250px;
+        bottom: 114px;
+        left: 70%;
+      }
+
+     
+      
+
+
+.beaker-wrapper {
+  position: absolute;
+  bottom: 120px;
+  left: 30%;
+  width: 200px;
+  height: auto;
+  
+}
+
+#milk-fill {
+  position: absolute;
+  bottom: 27px;
+  left: 72%;
+  width: 65%;
+  height: 0;
+  background: white;
+  opacity: 0.6;
+  mix-blend-mode: screen;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  pointer-events: none;
+  z-index: 2;
+ 
+}
+#water-fill {
+  position : relative;
+  bottom: 0;
+  left: 72%;
+  width: 65%;
+  height: 0;
+  top: -27px;
+  background: green;
+  opacity: 0.6;
+  mix-blend-mode: screen;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+     
+      .ins-area {
+        width: 400px;
+        position: relative;
+        background-color: #1e293b;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+       
+      }
+      #ins_area
+      {
+        top: -20px;
+      }
+
+      .reset {
+        background-color: blue;
+        color: white;
+        padding: 12px 24px;
+        margin: 10px auto;
+        border: none;
+        border-radius: 20px;
+        box-shadow: 2px 2px 8px rgb(70, 70, 252);
+        cursor: pointer;
+        font-weight: bold;
+        transition: 0.3s ease;
+        display: block;
+      }
+      .back {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: blue;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 8px rgb(70, 70, 252);
+        cursor: pointer;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s ease;
+      }
+    
+
+
+    </style>
+  </head>
+  <body>
+    <div class="simulation">
+
+      <div class="lab-area">
+        <h1 style="color: #60a5fa" , id="h1">
+          Catalase Activity
+        </h1>
+        <div class="table-surface">
+          <div class="beaker-wrapper">
+            <img
+              src="assets/cyl.png"
+              class="apparatus beaker"
+              id="beaker"
+              alt="Beaker"
+            />
+            <div id="milk-fill"></div>
+            <div id="water-fill"></div>
+
+          </div>
+          
+          <img
+            src="assets/hydrogen peroxide.png"
+            class="apparatus"
+            id="milk"
+            alt="Milk Jar"
+          />
+          <div id="milk-stream"></div>
+          <div id="water-stream"></div>
+
+
+          <img
+            src="assets/Spinach Paste.png"
+            class="apparatus water"
+            id="water"
+            alt="Distilled Water"
+          />
+        
+        </div>
+
+        
+        <div class="liquid-milk" id="milkInBeaker"></div>
+        <div class="liquid-water" id="waterInBeaker"></div>
+        
+      </div>
+
+      <!-- instruction area -->
+      <div class="ins-area" , id="ins_area" >
+        <h2 style="text-align: center; color: #60a5fa">Instruction</h2>
+        <ul>
+          <li>Add <strong>10 ml of fresh spinach</strong> into the graduated cylinder.</li>
+          <li>
+            Then add <strong>10 ml of hydrogen peroxide</strong> to equalize volume.
+          </li>
+          <li>Note initial volume.</li>
+          <li>Wait for <strong>1 minute</strong>.</li>
+          <li>Note volume increases due to formation of oxygen gas bubbles</li>
+        </ul>
+        <button class="reset" onclick="location.reload()">Reset</button>
+      </div>
+      
+     
+    </div>
+ 
+
+    <a class="back" href="lab.html"
+      ><i class="bxr bx-arrow-left-stroke"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="exp7.js"></script>
+  </body>
+</html>
